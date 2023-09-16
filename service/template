@@ -1,0 +1,19 @@
+NORMAL='\e[39m'
+RED='\e[31m'
+GREEN='\e[32m'
+
+msglog() {
+	case "${1}" in
+                green)
+                        TEXT_COLOR="${GREEN}"
+                        ;;
+                red)
+                        TEXT_COLOR="${RED}"
+                        ;;
+                normal)
+                        TEXT_COLOR="${NORMAL}"
+                        ;;
+        esac
+	DATE=$(date '+%Y %b %d %H:%M:%S')
+	echo ${DATE} ${TEXT_COLOR}${2}${NORMAL}
+}

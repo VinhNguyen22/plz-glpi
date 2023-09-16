@@ -1,0 +1,5 @@
+#!/bin/sh
+. /etc/service/template
+
+msglog green "Starting Apache..."
+exec apache2-foreground

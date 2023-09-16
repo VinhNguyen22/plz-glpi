@@ -1,0 +1,7 @@
+#!/bin/sh
+. /etc/service/template
+
+msglog green "Starting Cron..."
+# Touch cron files to fix 'NUMBER OF HARD LINKS > 1' issue. See  https://github.com/phusion/baseimage-docker/issues/198
+touch -c /etc/crontab /etc/cron.*/* /var/spool/cron/crontabs/*
+exec /usr/sbin/cron -f

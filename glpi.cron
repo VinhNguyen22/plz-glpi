@@ -1,0 +1,5 @@
+GLPI_CONFIG_DIR=/etc/glpi
+GLPI_VAR_DIR=/var/lib/glpi
+GLPI_LOG_DIR=/var/log/glpi
+
+*/1 * * * * www-data /usr/local/bin/php /var/www/html/front/cron.php

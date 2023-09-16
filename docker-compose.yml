@@ -1,0 +1,26 @@
+version: '3.5'
+services:
+  web:
+    container_name: glpi-web
+    build: .
+    restart: always
+    ports:
+      - 8089:80
+    volumes:
+      - ./etc/:/etc/glpi/
+      - ./files/:/var/lib/glpi/
+      - ./log/:/var/log/glpi/
+    env_file:
+      - ./mysql_settings.ini
+    depends_on:
+      - db
+
+  db:
+    image: mariadb
+    container_name: glpi-db
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
+    env_file:
+      - ./mysql_settings.ini
+    volumes:
+      - ./db/:/var/lib/mysql/

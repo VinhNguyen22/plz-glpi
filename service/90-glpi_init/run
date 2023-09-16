@@ -1,0 +1,6 @@
+#!/bin/sh
+. /etc/service/template
+
+msglog green "Starting glpi_init.sh..."
+/root/glpi_init.sh
+sleep infinity
