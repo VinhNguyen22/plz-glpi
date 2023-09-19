@@ -2,7 +2,7 @@
 glpi project for palazzo
 
 git clone https://github.com/VinhNguyen22/plz-glpi.git
-tar -xzvf plz-glpi*
+tar -xzvf plz-glpi* \n
 cd plz-glpi
 chmod -R 775 service
 cd ..
